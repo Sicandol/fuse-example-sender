@@ -28,14 +28,14 @@ public class ExampleRouteBuilder extends RouteBuilder {
                 .apiContextRouteId("doc-api")
                 .component("servlet")
                 .bindingMode(RestBindingMode.json);
-<!--
-        from("timer://foo-timer?fixedRate=true&period=60000")
+
+        from("timer://foo-timer?fixedRate=true&period=6000")
                 .routeId("timer-route")
                 .process(exchange -> exchange
                         .getIn()
                         .setBody(new GreetingDTO("timed from " + Inet4Address.getLocalHost().getHostName() + " " + new Date())))
                 .to(SEND_ROUTE);
--->
+
         rest("/message")
                 .description("Message {message}")
                 .get("/{message}").outType(String.class)
