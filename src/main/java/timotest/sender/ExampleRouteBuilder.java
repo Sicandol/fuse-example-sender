@@ -29,7 +29,7 @@ public class ExampleRouteBuilder extends RouteBuilder {
                 .component("servlet")
                 .bindingMode(RestBindingMode.json);
 
-        from("timer://foo-timer?fixedRate=true&period=6000")
+        from("timer://foo-timer?fixedRate=true&period=60000000")
                 .routeId("timer-route")
                 .process(exchange -> exchange
                         .getIn()
